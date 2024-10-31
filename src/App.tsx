@@ -1,9 +1,9 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
+import React from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Skills />
+        <TechStack />
         <Projects />
         <Experience />
       </main>
