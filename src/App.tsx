@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Projects />
         <Experience />
       </main>
+      <Footer />
     </div>
   );
 }
