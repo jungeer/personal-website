@@ -55,7 +55,7 @@ const experiences: Experience[] = [
 
 const Experience = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" data-section="工作经历">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle title="工作经历" subtitle="专业的前端开发工作经验" />
 

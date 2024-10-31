@@ -57,7 +57,7 @@ const OpenSource = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" data-section="开源项目">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle title="开源项目" subtitle="展示一些有趣的开源项目" />
 

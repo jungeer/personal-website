@@ -221,7 +221,7 @@ const Projects = () => {
   );
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50" data-section="项目展示">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle
           title="项目展示"

@@ -190,7 +190,7 @@ const TechStack = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50" data-section="技术栈">
       <div className="relative max-w-6xl mx-auto px-6">
         <SectionTitle
           title="技术栈"

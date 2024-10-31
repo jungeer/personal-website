@@ -27,7 +27,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="h-screen flex items-center justify-center">
+    <section
+      className="h-screen flex items-center justify-center"
+      data-section="个人信息"
+    >
       <div className="max-w-2xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
