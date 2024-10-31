@@ -29,6 +29,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
+import SectionTitle from "./SectionTitle";
 
 interface TechCategory {
   title: string;
@@ -237,15 +238,10 @@ const TechStack = () => {
     <>
       <section className="py-20 bg-gray-50">
         <div className="relative max-w-6xl mx-auto px-6">
-          {/* 移除个人信息部分，直接从技术栈开始 */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-          >
-            技术栈
-          </motion.h2>
+          <SectionTitle
+            title="技术栈"
+            subtitle="专注于前端开发技术，持续学习与成长"
+          />
 
           <TechGrid categories={mainCategories} />
 
@@ -261,14 +257,8 @@ const TechStack = () => {
 
           {/* 项目展示部分 */}
           <div className="mt-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl font-bold text-center mb-8"
-            >
-              开源项目
-            </motion.h2>
+            <SectionTitle title="开源项目" subtitle="展示一些有趣的开源项目" />
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project, index) => (
                 <motion.a

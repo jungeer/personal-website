@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
+import SectionTitle from "./SectionTitle";
 
 interface Project {
   name: string;
@@ -222,14 +223,11 @@ const Projects = () => {
   return (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-12"
-        >
-          项目展示
-        </motion.h2>
+        <SectionTitle
+          title="项目展示"
+          subtitle="精选项目展示，体现专业技术能力"
+        />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div

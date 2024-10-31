@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Building2, Award, Briefcase } from "lucide-react";
+import SectionTitle from "./SectionTitle";
 
 interface Experience {
   company: string;
@@ -56,14 +57,7 @@ const Experience = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-12"
-        >
-          工作经历
-        </motion.h2>
+        <SectionTitle title="工作经历" subtitle="专业的前端开发工作经验" />
 
         <div className="relative">
           {/* 时间轴线 */}
