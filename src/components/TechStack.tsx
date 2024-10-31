@@ -194,7 +194,7 @@ const TechStack = () => {
       <div className="relative max-w-6xl mx-auto px-6">
         <SectionTitle
           title="技术栈"
-          subtitle="专注于前端开发技术，持续学习与成长"
+          subtitle="专注于技术发展，持续学习与成长"
         />
 
         <TechGrid categories={mainCategories} />
