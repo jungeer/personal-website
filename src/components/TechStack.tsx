@@ -18,8 +18,11 @@ import {
   SiOpenai,
   SiAntdesign,
   SiElement,
+  SiWechat,
+  SiExpress,
 } from "react-icons/si";
-import { FaVuejs } from "react-icons/fa";
+import { FaVuejs, FaMobile, FaChartBar, FaChartLine } from "react-icons/fa";
+import { DiNodejs } from "react-icons/di";
 
 interface TechCategory {
   title: string;
@@ -51,11 +54,27 @@ const TechStack: React.FC = () => {
       ],
     },
     {
-      title: "UI 框架",
+      title: "Web UI 框架",
       items: [
         { icon: SiElement, name: "Element Plus", color: "#409EFF" },
         { icon: SiAntdesign, name: "Ant Design", color: "#0170FE" },
         { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
+      ],
+    },
+    {
+      title: "移动端开发",
+      items: [
+        { icon: SiVuedotjs, name: "UniApp", color: "#2B9939" },
+        { icon: SiWechat, name: "小程序", color: "#07C160" },
+        { icon: SiAntdesign, name: "Vant", color: "#1989FA" },
+        { icon: FaMobile, name: "移动适配", color: "#FF6B6B" },
+      ],
+    },
+    {
+      title: "可视化",
+      items: [
+        { icon: FaChartBar, name: "ECharts", color: "#AA344D" },
+        { icon: FaChartLine, name: "Highcharts", color: "#8087E8" },
       ],
     },
     {
@@ -67,8 +86,10 @@ const TechStack: React.FC = () => {
       ],
     },
     {
-      title: "数据存储",
+      title: "后端技术",
       items: [
+        { icon: DiNodejs, name: "Koa", color: "#33333D" },
+        { icon: SiExpress, name: "Express", color: "#000000" },
         { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
         { icon: SiGraphql, name: "GraphQL", color: "#E10098" },
       ],
