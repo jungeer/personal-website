@@ -166,15 +166,56 @@ const TechStack = () => {
     setShowModal(false);
   };
 
+  // 更新项目数据
+  const projects = [
+    {
+      name: "2048",
+      description: "2048 游戏 - 经典小游戏的重新实现",
+      link: "https://github.com/jungeer/2048",
+      tech: ["JavaScript", "Game", "Web"],
+      preview: true,
+    },
+    {
+      name: "lucky-board",
+      description: "百分百幸运板 💐 - 互动抽奖活动页面",
+      link: "https://github.com/jungeer/lucky-board",
+      tech: ["Vue", "Animation", "Interactive"],
+      preview: true,
+    },
+    {
+      name: "christmas",
+      description: "圣诞节页面动画 🎄 - 节日主题动画特效",
+      link: "https://github.com/jungeer/christmas",
+      tech: ["JavaScript", "Animation", "Holiday"],
+      preview: true,
+    },
+    {
+      name: "dada-site",
+      description: "哒哒 🐱 ⚡️ - 现代化的小猫网站",
+      link: "https://github.com/jungeer/dada-site",
+      tech: ["TypeScript", "React", "Modern Web"],
+      preview: true,
+    },
+    {
+      name: "fe-blog",
+      description: "这是一个博客仓库，没什么事的时候就写一写，记录记录📝",
+      link: "https://github.com/jungeer/fe-blog",
+      tech: ["Blog", "Documentation"],
+      stars: 1,
+    },
+    {
+      name: "wxapp-taro-template",
+      description: "微信小程序\\Taro\\NutUI\\Typescript\\Vue3.0",
+      link: "https://github.com/jungeer/wxapp-taro-template",
+      tech: ["Taro", "Vue3", "TypeScript"],
+    },
+  ];
+
   return (
     <>
       <section className="py-20 bg-gray-50">
         <div className="relative max-w-6xl mx-auto px-6">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500 rounded-full blur-xl" />
-            <div className="absolute bottom-10 right-10 w-20 h-20 bg-purple-500 rounded-full blur-xl" />
-          </div>
-
+          {/* 移除个人信息部分，直接从技术栈开始 */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -194,6 +235,57 @@ const TechStack = () => {
             >
               查看全部技术栈
             </button>
+          </div>
+
+          {/* 项目展示部分 */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-center mb-8">开源项目</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.map((project) => (
+                <motion.a
+                  key={project.name}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-semibold">{project.name}</h3>
+                    {project.preview && (
+                      <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
+                        Demo
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-gray-600 mb-4 h-12 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  {project.stars && (
+                    <div className="mt-4 flex items-center text-gray-600">
+                      <svg
+                        className="w-4 h-4 mr-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <span>{project.stars}</span>
+                    </div>
+                  )}
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
