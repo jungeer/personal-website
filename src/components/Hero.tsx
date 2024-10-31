@@ -38,8 +38,7 @@ export default function Hero() {
             <motion.div
               className="relative"
               animate={{
-                scale: [1, 1.05, 1],
-                rotate: [0, 5, -5, 0],
+                scale: [1, 1.15, 1],
               }}
               transition={{
                 duration: 6,
