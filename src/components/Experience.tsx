@@ -55,7 +55,7 @@ const experiences: Experience[] = [
 
 const Experience = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle title="工作经历" subtitle="专业的前端开发工作经验" />
 
@@ -76,11 +76,7 @@ const Experience = () => {
                   : "md:pl-12"
               } md:w-1/2`}
             >
-              <div
-                className={`bg-white p-6 rounded-xl shadow-lg ${
-                  index % 2 === 0 ? "md:mr-6" : "md:ml-6"
-                }`}
-              >
+              <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
                 <div className="flex items-center gap-2 mb-4 text-gray-600">
                   <Calendar className="w-4 h-4" />
                   <span>{exp.period}</span>

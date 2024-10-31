@@ -57,7 +57,7 @@ const OpenSource = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle title="开源项目" subtitle="展示一些有趣的开源项目" />
 
@@ -85,7 +85,7 @@ const OpenSource = () => {
                 y: -5,
                 transition: { duration: 0.2 },
               }}
-              className="block p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="block p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-semibold">{project.name}</h3>
