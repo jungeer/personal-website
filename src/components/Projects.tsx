@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 
@@ -17,6 +17,28 @@ interface Project {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  // 添加滚动锁定功能
+  useEffect(() => {
+    if (selectedProject) {
+      // 锁定滚动
+      document.body.style.overflow = "hidden";
+      // 可选：添加右侧padding以防止页面抖动
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      // 恢复滚动
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    }
+
+    // 清理函数
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    };
+  }, [selectedProject]);
 
   const projects: Project[] = [
     {
@@ -134,6 +156,8 @@ const Projects = () => {
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50"
       onClick={onClose}
+      // 防止触摸设备上的滚动穿透
+      onTouchMove={(e) => e.preventDefault()}
     >
       <div
         className="bg-white rounded-lg w-full max-w-4xl h-[90vh] flex flex-col"

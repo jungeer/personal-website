@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   SiHtml5,
@@ -78,6 +78,28 @@ const TechStack = () => {
   console.log("TechStack component rendering");
 
   const [showModal, setShowModal] = useState(false);
+
+  // 添加滚动锁定功能
+  useEffect(() => {
+    if (showModal) {
+      // 锁定滚动
+      document.body.style.overflow = "hidden";
+      // 添加右侧padding以防止页面抖动
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      // 恢复滚动
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    }
+
+    // 清理函数
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    };
+  }, [showModal]);
 
   const mainCategories: TechCategory[] = [
     {
@@ -292,16 +314,10 @@ const TechStack = () => {
 
       {showModal && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-          style={{
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50"
           onClick={handleCloseModal}
+          // 防止���摸设备上的滚动穿透
+          onTouchMove={(e) => e.preventDefault()}
         >
           <div
             className="bg-white rounded-lg w-full max-w-6xl h-[90vh] relative flex flex-col"
