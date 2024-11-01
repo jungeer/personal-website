@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github } from "lucide-react";
+import avatar from "../assets/images/avatar.png";
 
 export default function Hero() {
   const [toast, setToast] = useState<{ show: boolean; message: string }>({
@@ -71,7 +72,7 @@ export default function Hero() {
               }}
             >
               <img
-                src="https://github.com/jungeer.png"
+                src={avatar}
                 alt="jungeer"
                 className="w-32 h-32 rounded-full shadow-lg"
               />
