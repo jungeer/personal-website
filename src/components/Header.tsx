@@ -24,19 +24,23 @@ const Header = () => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-            const sectionName = entry.target.getAttribute("data-section") || "";
-            if (sectionName === "个人信息") {
-              setCurrentSection("");
-            } else {
-              setCurrentSection(sectionName);
-            }
+        // 找到当前可见比例最高的 section
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          const sectionName =
+            visibleSection.target.getAttribute("data-section") || "";
+          if (sectionName === "个人信息") {
+            setCurrentSection("");
+          } else {
+            setCurrentSection(sectionName);
           }
-        });
+        }
       },
       {
-        threshold: [0.3],
+        threshold: [0.2, 0.4, 0.6], // 添加多个阈值
         rootMargin: "-50px 0px -50px 0px",
       }
     );
