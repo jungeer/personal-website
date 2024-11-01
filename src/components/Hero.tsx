@@ -10,20 +10,41 @@ export default function Hero() {
 
   const copyToClipboard = async (text: string, field: "id" | "email") => {
     try {
-      await navigator.clipboard.writeText(text);
-      setToast({
-        show: true,
-        message: `${field === "id" ? "小红书ID" : "邮箱"}已复制`,
-      });
-      setTimeout(() => {
-        setToast({ show: false, message: "" });
-      }, 2000);
-    } catch {
-      setToast({
-        show: true,
-        message: "复制失败",
-      });
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        showToast(`${field === "id" ? "小红书ID" : "邮箱"}已复制`);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          document.execCommand("copy");
+          textArea.remove();
+          showToast(`${field === "id" ? "小红书ID" : "邮箱"}已复制`);
+        } catch (err) {
+          console.error("Fallback: Oops, unable to copy", err);
+          showToast("复制失败，请手动复制");
+        }
+      }
+    } catch (err) {
+      console.error("Failed to copy:", err);
+      showToast("复制失败，请手动复制");
     }
+  };
+
+  const showToast = (message: string) => {
+    setToast({ show: true, message });
+    const timer = setTimeout(() => {
+      setToast({ show: false, message: "" });
+    }, 2000);
+
+    return () => clearTimeout(timer);
   };
 
   return (
@@ -127,7 +148,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="fixed bottom-8 left-1/2 -translate-x-1/2 px-4 py-2 bg-green-500 text-white text-sm rounded-lg shadow-lg"
+              className="fixed bottom-8 left-1/2 -translate-x-1/2 px-4 py-2 bg-green-500 text-white text-sm rounded-lg shadow-lg z-50"
             >
               {toast.message}
             </motion.div>
