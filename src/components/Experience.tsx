@@ -76,7 +76,7 @@ const Experience = () => {
                   : "md:pl-12"
               } md:w-1/2`}
             >
-              <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <div className="flex items-center gap-2 mb-4 text-gray-600">
                   <Calendar className="w-4 h-4" />
                   <span>{exp.period}</span>
@@ -84,7 +84,9 @@ const Experience = () => {
 
                 <div className="flex items-center gap-2 mb-2">
                   <Building2 className="w-5 h-5 text-blue-500" />
-                  <h3 className="text-xl font-semibold">{exp.company}</h3>
+                  <h3 className="text-xl font-semibold dark:text-white">
+                    {exp.company}
+                  </h3>
                 </div>
 
                 <div className="flex items-center gap-2 mb-4 text-gray-600">

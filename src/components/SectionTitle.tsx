@@ -15,7 +15,7 @@ const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
     >
       <div className="relative inline-block">
         <h2 className="text-5xl font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
             {title}
           </span>
         </h2>
@@ -24,7 +24,7 @@ const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-gray-500 text-lg"
+            className="mt-4 text-gray-500 dark:text-gray-400 text-lg"
           >
             {subtitle}
           </motion.p>

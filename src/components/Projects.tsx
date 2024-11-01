@@ -161,7 +161,7 @@ const Projects = () => {
       onTouchMove={(e) => e.preventDefault()}
     >
       <div
-        className="bg-white rounded-lg w-full max-w-4xl h-[90vh] flex flex-col"
+        className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-4xl h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="sticky top-0 bg-white p-6 border-b">
@@ -237,7 +237,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
             >
               <div className="relative h-48 overflow-hidden">
                 <img

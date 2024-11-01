@@ -57,9 +57,12 @@ const OpenSource = () => {
   ];
 
   return (
-    <section className="py-20 bg-white" data-section="开源项目">
+    <section className="py-20" data-section="开源项目">
       <div className="max-w-6xl mx-auto px-6">
-        <SectionTitle title="开源项目" subtitle="展示一些有趣的开源项目" />
+        <SectionTitle
+          title="开源项目"
+          subtitle="分享一些有趣且实用的开源项目"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
@@ -85,21 +88,23 @@ const OpenSource = () => {
                 y: -5,
                 transition: { duration: 0.2 },
               }}
-              className="block p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="block p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-semibold">{project.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {project.name}
+                </h3>
                 {project.preview && (
                   <motion.span
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full"
+                    className="px-2 py-1 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full"
                   >
                     Demo
                   </motion.span>
                 )}
               </div>
-              <p className="text-gray-600 mb-4 h-12 line-clamp-2">
+              <p className="text-gray-600 dark:text-gray-400 mb-4 h-12 line-clamp-2">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -114,7 +119,7 @@ const OpenSource = () => {
                         delay: index * 0.1 + techIndex * 0.05,
                       },
                     }}
-                    className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+                    className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full"
                   >
                     {tech}
                   </motion.span>
@@ -127,7 +132,7 @@ const OpenSource = () => {
                     opacity: 1,
                     transition: { delay: index * 0.1 + 0.3 },
                   }}
-                  className="mt-4 flex items-center text-gray-600"
+                  className="mt-4 flex items-center text-gray-600 dark:text-gray-400"
                 >
                   <svg
                     className="w-4 h-4 mr-1"

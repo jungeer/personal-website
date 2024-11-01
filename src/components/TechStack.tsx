@@ -49,26 +49,30 @@ const TechGrid = ({ categories }: { categories: TechCategory[] }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: categoryIndex * 0.1 }}
-        className="bg-white rounded-xl p-6 shadow-lg"
+        className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg"
       >
-        <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-        <div className="grid grid-cols-2 gap-4">
-          {category.items.map((tech) => (
-            <motion.div
-              key={tech.name}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50"
-            >
-              <tech.icon
-                className="w-8 h-8 mb-2"
-                style={{ color: tech.color }}
-              />
-              <span className="text-sm text-gray-600">{tech.name}</span>
-            </motion.div>
-          ))}
+        <h3 className="text-xl font-semibold mb-4 dark:text-white">
+          {category.title}
+        </h3>
+        <div className="hover:bg-gray-50 dark:hover:bg-gray-700">
+          <div className="grid grid-cols-2 gap-4">
+            {category.items.map((tech) => (
+              <motion.div
+                key={tech.name}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
+                }}
+                className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50"
+              >
+                <tech.icon
+                  className="w-8 h-8 mb-2"
+                  style={{ color: tech.color }}
+                />
+                <span className="text-sm text-gray-600">{tech.name}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     ))}
@@ -218,7 +222,7 @@ const TechStack = () => {
           onTouchMove={(e) => e.preventDefault()}
         >
           <div
-            className="bg-white rounded-lg w-full max-w-6xl h-[90vh] relative flex flex-col"
+            className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-6xl h-[90vh] relative flex flex-col"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();

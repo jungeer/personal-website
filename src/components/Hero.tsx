@@ -28,7 +28,7 @@ export default function Hero() {
 
   return (
     <section
-      className="h-screen flex items-center justify-center"
+      className="h-screen flex items-center justify-center dark:bg-gray-900"
       data-section="个人信息"
     >
       <div className="max-w-2xl mx-auto px-6 text-center">
@@ -68,7 +68,7 @@ export default function Hero() {
               />
             </motion.div>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 mt-8">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mt-8">
             前端俊哥儿乐_
           </h1>
         </motion.div>
@@ -79,17 +79,17 @@ export default function Hero() {
           transition={{ delay: 0.2 }}
           className="space-y-6 mb-12"
         >
-          <div className="flex items-center justify-center gap-3 text-gray-600">
+          <div className="flex items-center justify-center gap-3 text-gray-600 dark:text-gray-400">
             <span>深圳</span>
             <span className="w-1 h-1 bg-gray-300 rounded-full" />
             <span>前端开发工程师</span>
           </div>
 
-          <p className="text-gray-500">计算机科学与技术</p>
+          <p className="text-gray-500 dark:text-gray-400">计算机科学与技术</p>
 
           <div className="flex flex-col items-center gap-2">
             <motion.button
-              className="text-gray-500 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors"
+              className="text-gray-500 dark:text-gray-400 px-3 py-1.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               onClick={() => copyToClipboard("420524309", "id")}
               whileHover={{ scale: 1.02 }}
             >
@@ -97,7 +97,7 @@ export default function Hero() {
             </motion.button>
 
             <motion.button
-              className="text-gray-500 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors"
+              className="text-gray-500 dark:text-gray-400 px-3 py-1.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               onClick={() => copyToClipboard("95243241@qq.com", "email")}
               whileHover={{ scale: 1.02 }}
             >
@@ -115,9 +115,9 @@ export default function Hero() {
             href="https://github.com/jungeer"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
           >
-            <Github className="w-5 h-5 text-gray-700" />
+            <Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />
           </a>
         </motion.div>
 
