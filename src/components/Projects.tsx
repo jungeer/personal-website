@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import SectionTitle from "./SectionTitle";
@@ -42,6 +42,28 @@ const Projects = () => {
   }, [selectedProject]);
 
   const projects: Project[] = [
+    {
+      name: "项目管理实践（多项目并行）",
+      description: "需求治理、排期推进、跨团队协同与交付管理",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1650&auto=format&fit=crop",
+      tech: ["项目管理", "需求管理", "跨团队协作", "风险控制"],
+      details: {
+        background:
+          "在多条业务线并行推进阶段，需要统一需求流转与交付标准，降低跨角色沟通成本，并保障多个版本稳定上线。",
+        responsibilities: [
+          "建立需求池管理机制，负责需求收集、优先级评估、里程碑拆解与版本排期",
+          "制定并落地《项目管理流程》《需求交付标准》《线上事故记录》，统一团队协作方式",
+          "组织需求评审、进度同步、风险复盘例会，推动产品、设计、前后端与测试协同",
+          "跟踪关键路径与阻塞项，动态调整资源与计划，确保核心节点按期交付",
+        ],
+        achievements: [
+          "形成可复用的项目管理模板，提升新项目启动效率与过程透明度",
+          "降低跨团队沟通成本，需求推进节奏更加稳定可控",
+          "在多项目并行场景下保持版本按期上线，提升整体交付可靠性",
+        ],
+      },
+    },
     {
       name: "前端工程化",
       description: "脚手架、工具库、私有化服务、前端架构建设",
