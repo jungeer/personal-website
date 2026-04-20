@@ -108,6 +108,15 @@ const TechStack = () => {
 
   const mainCategories: TechCategory[] = [
     {
+      title: "AI 实战能力",
+      items: [
+        { icon: SiOpenai, name: "ChatGPT", color: "#10A37F" },
+        { icon: SiOpenai, name: "Cursor", color: "#412991" },
+        { icon: SiOpenai, name: "AIGC 工作流", color: "#7C3AED" },
+        { icon: SiOpenai, name: "提示词工程", color: "#2563EB" },
+      ],
+    },
+    {
       title: "前端框架",
       items: [
         { icon: SiVuedotjs, name: "Vue", color: "#4FC08D" },
