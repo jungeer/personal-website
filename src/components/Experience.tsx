@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Building2, Award, Briefcase } from "lucide-react";
 import SectionTitle from "./SectionTitle";
@@ -12,6 +11,31 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+    company: "xxx科技公司（相亲小程序 / 管理系统）",
+    period: "2025.03-2025.07",
+    title: "项目管理 / 产品经理 / 前端开发",
+    responsibilities: [
+      "统筹需求池管理、版本排期与任务分工，保障版本按时上线",
+      "制定《项目管理流程》《需求交付标准》《线上事故记录》，规范协作机制并降低沟通成本",
+      "组织需求评审、进度同步与风险复盘会议，推动跨角色高效协同",
+      "参与关键代码评审并把控交付质量，统一需求开发与上线节奏",
+      "参与前端成员招聘，补齐团队人力并提升项目交付稳定性",
+    ],
+    achievements: ["项目日活 5w+，有效用户 30w+"],
+  },
+  {
+    company: "xxx科技公司（旅游小程序）",
+    period: "2024.12-2025.02",
+    title: "项目管理 / 产品经理 / 前端开发",
+    responsibilities: [
+      "独立承担小程序项目全流程推进，覆盖需求到上线的项目管理与交付",
+      "主导需求从 0 到 1 收集与梳理，输出《产品需求稿》《管理后台需求稿》并明确验收标准",
+      "负责需求里程碑拆解、任务分解与排期管理，输出《主要目标》《任务拆解》《需求排期》",
+      "搭建项目技术方案与开发规范，推动酒店、机票两大业务模块按计划落地",
+    ],
+    achievements: ["形成可复用的项目管理与交付模板，提升后续项目启动效率"],
+  },
   {
     company: "xxx科技公司",
     period: "2024.06-2024.11",
